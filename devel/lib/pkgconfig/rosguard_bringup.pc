@@ -1,0 +1,8 @@
+prefix=/home/niky/Workspaces/ros/rosguard_ws/devel
+
+Name: rosguard_bringup
+Description: Description of rosguard_bringup
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/niky/Workspaces/ros/rosguard_ws/devel/lib 
+Requires: 

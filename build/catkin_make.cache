@@ -1,0 +1,2 @@
+rosguard_bringup:rosguard_description
+-DCATKIN_DEVEL_PREFIX=/home/niky/Workspaces/ros/rosguard_ws/devel -DCMAKE_INSTALL_PREFIX=/home/niky/Workspaces/ros/rosguard_ws/install -G Unix Makefiles

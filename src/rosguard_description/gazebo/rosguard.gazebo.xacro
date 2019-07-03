@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+
+<robot name="rosguard" xmlns:xacro="http://ros.org/wiki/xacro">
+
+	<material name="blue">
+	    <color rgba="0 0 0.8 1"/>
+	</material>
+
+	<material name="white">
+	    <color rgba="1 1 1 1"/>
+	</material>
+
+
+	<material name="yellow">
+	    <color rgba="1 0.8 0.3 0.7"/>
+	</material>
+
+
+	<material name="gray">
+	    <color rgba="0.7 0.7 0.7 1.0"/>
+	</material>
+
+	<material name="darkgray">
+	   <color rgba="0.3 0.3 0.3 1.0"/>
+	</material>
+
+  <gazebo reference="chefbot_wheel_left_link">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+  </gazebo>
+	
+  <gazebo reference="chefbot_wheel_right_link">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+  </gazebo>
+	  
+  <gazebo reference="chefbot_caster_back_link">
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>1.0</maxVel>
+  </gazebo>
+	  
+  <gazebo reference="base_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <sensor type="contact" name="bumpers">
+      <always_on>1</always_on>
+      <update_rate>50.0</update_rate>
+      <visualize>true</visualize>
+      <contact>
+        <collision>base_footprint_collision_base_link</collision>
+      </contact>
+    </sensor>
+  </gazebo>
+
+	<gazebo reference="chefbot_wheel_left_link">
+	  <material>Gazebo/Black</material>
+	</gazebo>
+
+	<gazebo reference="chefbot_wheel_right_link">
+	  <material>Gazebo/Black</material>
+	</gazebo>
+
+	<gazebo reference="base_link">
+	  <material>Gazebo/White</material>
+	</gazebo>
+  
+  <gazebo reference="base_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <sensor type="contact" name="bumpers">
+      <always_on>1</always_on>
+      <update_rate>50.0</update_rate>
+      <visualize>true</visualize>
+      <contact>
+        <collision>base_footprint_collision_base_link</collision>
+      </contact>
+    </sensor>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="kobuki_controller" filename="libgazebo_ros_kobuki.so">
+      <publish_tf>1</publish_tf>
+      <left_wheel_joint_name>wheel_left_joint</left_wheel_joint_name>
+      <right_wheel_joint_name>wheel_right_joint</right_wheel_joint_name>
+      <wheel_separation>.182</wheel_separation>
+      <wheel_diameter>0.06</wheel_diameter>
+      <torque>18.0</torque>
+      <velocity_command_timeout>0.6</velocity_command_timeout>
+    </plugin>
+  </gazebo>
+</robot>

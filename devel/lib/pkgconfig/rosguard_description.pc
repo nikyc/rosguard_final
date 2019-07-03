@@ -1,0 +1,8 @@
+prefix=/home/niky/Workspaces/ros/rosguard_ws/devel
+
+Name: rosguard_description
+Description: Description of rosguard_description
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/niky/Workspaces/ros/rosguard_ws/devel/lib 
+Requires: 
